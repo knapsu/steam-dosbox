@@ -1,0 +1,47 @@
+
+Introduction
+-----
+Here you can find ready to use DOSBox emulator that works with Steam Runtime.
+
+This can be used by game publishers to easily create packages of old DOS games that will run on SteamOS and Steam for Linux.
+
+
+Usage
+-----
+Copy 'dosbox-*' and 'run.sh' to working directory (or simply clone the repository).
+Copy DOS game files into subdirectory (example DOSGAME).
+Create 'dosbox.conf' configuration file with settings optimized for the game.
+
+The final structure should look similar to this
+.
+├── dosbox-32bit
+│   ├── bin
+│   │   └── dosbox
+│   └── lib
+│       └── ...
+├── dosbox-64bit
+│   ├── bin
+│   │   └── dosbox
+│   └── lib
+│       └── ...
+├── dosbox-source
+│   └── ...
+├── DOSGAME *
+│   └── ...
+├── dosbox.conf *
+└── run.sh
+
+Files and directories marked with '*' are created by you.
+
+
+Technical details
+-----
+DOSBox binaries with requred libraries were extracted from official Ubuntu Precise packages on which the Steam Runtime is based on. Both 64-bit and 32-bit Linux is supported. The emulator is distributed under GPLv2 license which requires us to attach its sources. They are located in 'dosbox-source' directory along with applied patches. 
+
+
+Links
+-----
+Steam - http://store.steampowered.com/
+Steam Runtime - https://github.com/ValveSoftware/steam-runtime
+DOSBox - https://www.dosbox.com/
+Ubuntu package - https://launchpad.net/ubuntu/precise/+source/dosbox

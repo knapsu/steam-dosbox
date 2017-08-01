@@ -11,6 +11,8 @@ Usage
 Copy 'dosbox-*' and 'run.sh' to working directory (or simply clone the repository).
 Copy DOS game files into subdirectory (example DOSGAME).
 Create 'dosbox.conf' configuration file with settings optimized for the game.
+The configuration file must have 'autoexec' section with commands to automate
+mounting game directory and executin the actual game startup file.
 
 The final structure should look similar to this
 .
@@ -32,6 +34,17 @@ The final structure should look similar to this
 └── run.sh
 
 Files and directories marked with '*' are created by you.
+
+To automatically start the game when DOSBox emulator loads we need to define [autoexec] section in the configuration file. This section should contain instructions that will mount the game directory and execute EXE/COM/BAT file that starts the actual game.
+
+It should look similar to this
+
+[autoexec]
+@echo off
+mount c DOSGAME
+c:
+call START.BAT
+exit
 
 
 Technical details
